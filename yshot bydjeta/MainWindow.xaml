@@ -1,0 +1,41 @@
+﻿<Window x:Class="yshot_bydjeta.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:yshot_bydjeta"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FF1E8188">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="PickData" Grid.Row="0"  VerticalAlignment="Center" CalendarClosed="PickData_CalendarClosed"/>
+        <DataGrid x:Name="IsnPustGrit"  Grid.Row="1" Grid.RowSpan="8" IsSynchronizedWithCurrentItem="False" Background="#FF1E8188"/>
+        <TextBlock x:Name="Zagolovok" Grid.Column="1" Grid.Row="0" Text="Имя записи" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="PodZagolovok" Grid.Column="1"  Grid.Row="0" TextWrapping="Wrap" Text="Введите название" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="TypeZapisb" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="Тип записи" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <ComboBox x:Name="typecombobox" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" SelectionChanged="typecombobox_SelectionChanged" />
+        <Button x:Name="PlusType" Grid.Column="1" Content="Добавить новый тип записи" Grid.Row="2" VerticalAlignment="Center" Click="add_new_type"/>
+        <TextBlock x:Name="Itog" Grid.Column="1" Grid.Row="3" Text="Итог" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="PickItog" Grid.Column="1"  Grid.Row="3" TextWrapping="Wrap" Text="Введите итог" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
+        <Button x:Name="Green" Grid.Column="1" Content="Добавить запись"  Grid.Row="4" Click="add" Background="#FF8AF70E" />
+        <Button x:Name="orange" Content="Изменить выбранную запись"  Grid.Row="6" Grid.Column="1" Click="edit" Background="#FFD8B50E"/>
+        <Button x:Name="red" Grid.Column="1" Content="Удалить запись" Grid.Row="8" Click="del" Background="#FFEC0D0D"/>
+        <TextBlock x:Name="vecbItog" Grid.Row="9" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Итого:0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+    </Grid>
+</Window>
